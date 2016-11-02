@@ -13,6 +13,9 @@ var router = express.Router();
 //set our port to either a predetermined port number if you have set it up, or 3001
 var port = process.env.API_PORT || 3001;
 
+//db config
+mongoose.connect('mongodb://dfmmalaw:dfmmalaw@ds019836.mlab.com:19836/bryandb');
+
 //now we should configure the API to use bodyParser and look for JSON data in the request body
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
